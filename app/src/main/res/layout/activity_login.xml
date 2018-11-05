@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View" />
+        <variable name="vm"
+            type="hbs.vn.ui.login.UserModelView"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/image_icon_login"
+            android:layout_width="196dp"
+            android:layout_height="196dp"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/android_oreo" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="16dp"
+            android:maxLines="1"
+            android:maxLength="24"
+            android:hint="@string/username"
+            android:text="@={vm.username}"
+            android:textSize="@dimen/text_size_normal"
+            android:textColorHint="@color/color_text_hint"
+            android:background="@drawable/bg_edit_text" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="16dp"
+            android:maxLines="1"
+            android:maxLength="24"
+            android:hint="@string/password"
+            android:text="@={vm.password}"
+            android:textSize="@dimen/text_size_normal"
+            android:textColorHint="@color/color_text_hint"
+            android:background="@drawable/bg_edit_text" />
+
+        <CheckBox
+            android:layout_margin="16dp"
+            android:paddingLeft="24dp"
+            android:text="@string/label_not_robot"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checked="@={vm.checkbox}"/>
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:enabled="@{vm.loginEnabled}"
+            android:padding="16dp"
+            android:textSize="@dimen/text_size_normal"
+            android:text="@string/login"
+            android:background="@drawable/btn_login"
+            android:textColor="@android:color/white"
+            android:onClick="@{(view) -> vm.onLoginButtonClicked()}"/>
+    </LinearLayout>
+</layout>
