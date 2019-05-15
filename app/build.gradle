@@ -43,5 +43,5 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
 
-    compile "com.android.support:recyclerview-v7:26.1.0"
+    implementation "com.android.support:recyclerview-v7:26.1.0"
 }

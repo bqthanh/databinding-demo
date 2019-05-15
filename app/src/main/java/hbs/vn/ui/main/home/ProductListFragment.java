@@ -1,6 +1,6 @@
 package hbs.vn.ui.main.home;
 
-import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -38,10 +38,10 @@ public class ProductListFragment extends Fragment implements AdapterEventListene
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        if (activity instanceof FragmentEventListener) {
-            mFragmentEventListener = (FragmentEventListener) activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof FragmentEventListener) {
+            mFragmentEventListener = (FragmentEventListener) context;
         }
     }
 
